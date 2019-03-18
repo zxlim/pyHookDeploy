@@ -21,7 +21,7 @@ $ ./start.sh
 ### local_repos.txt
 This file contains the information of repositories to deploy on the local system. Each line follows the following format:
 ```
-repo_name:path_to_repo:path_to_key:secret
+repo_name;path_to_repo;path_to_key;secret
 ```
 Breakdown of the components:
 
@@ -37,10 +37,10 @@ Examples:
 # Comment lines start with a hash and will be ignored.
 
 # Configuration for a repository called "repo1".
-zxlim/repo1:/opt/ext/repo1:/var/private/.ssh/repo1_deployment_key
+zxlim/repo1;/opt/ext/repo1;/var/private/.ssh/repo1_deployment_key
 
 # Repository "repo2" requires a secret.
-zxlim/repo2:/opt/ext/repo2:/var/private/.ssh/repo2_deployment_key:a1b2c3d4e5
+zxlim/repo2;/opt/ext/repo2;/var/private/.ssh/repo2_deployment_key;a1b2c3d4e5
 ```
 
 # License
