@@ -15,6 +15,13 @@ bp = Blueprint("server", __name__)
 def entrypoint():
 	event, header, origin, origin_ip, repo_data = "unknown", request.headers, "unknown", request.remote_addr, None
 
+	# Fix for reverse proxies.
+	if header.get("X-Real-IP") is not None:
+		origin_ip = header.get("X-Real-IP")
+	elif header.get("X-Forwarded-For") is not None:
+		origin_ip = header.get("X-Forwarded-For")
+	
+
 	if header.get("X-GitHub-Event"):
 		# GitHub Webhook Event.
 		origin = "github"

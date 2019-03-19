@@ -24,7 +24,7 @@ app = init_app()
 
 
 def main():
-	# Run instance on 0.0.0.0 on port 5000.
+	# Run instance on 0.0.0.0 on port 8080.
 	app.run(host="0.0.0.0", port=8080)
 
 

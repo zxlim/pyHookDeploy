@@ -62,7 +62,7 @@ def get_local_repos():
 				# Ignore comment lines
 				continue
 
-			l = line.lower().split(";")
+			l = line.split(";")
 			repo, name, path, key, secret = None, l[0].strip().lower(), l[1].strip(), l[2].strip(), None
 
 			if len(l) == 4:

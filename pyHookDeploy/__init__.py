@@ -6,6 +6,15 @@ import logging
 from flask import Flask
 
 
+class AppConfig(object):
+	DEBUG = False
+	TESTING = False
+
+	JSON_AS_ASCII = False
+
+	LOCAL_REPO_FILE_PATH = "local_repos.txt"
+
+
 def init_app():
 	app = Flask(__name__)
 
